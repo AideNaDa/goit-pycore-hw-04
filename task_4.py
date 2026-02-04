@@ -20,7 +20,7 @@ def change_contact(args, contacts):
     Updates the phone number for an existing contact.
     Usage: change [name] [new_phone]
     """
-    name, phone = args[0]
+    name, phone = args
     if name in contacts:
         contacts[name] = phone
         return "Contact updated."
