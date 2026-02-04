@@ -38,21 +38,20 @@ def show_phone(args, contacts):
     else:
         return f"Error: Contact '{name}' not found."
     
-
 def show_all(contacts):
     """
     Displays all saved contacts.
     Usage: all
     """
-    heared = f'{'Name':<15} | {'Phone':<15}'
-    separator = '-' * len(heared)
+    header = f"{'Name':<15} | {'Phone':<15}"
+    separator = "-" * len(header)
 
-    show_all = [heared, separator]
+    lines = [header, separator]
 
     for name, phone in contacts.items():
-        show_all.append(f'{name:<15} | {phone:<15}')
-        
-    return '\n'.join(show_all)
+        lines.append(f"{name:<15} | {phone:<15}")
+
+    return "\n".join(lines)
 
 def main():
     """
