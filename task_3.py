@@ -1,6 +1,8 @@
 import sys
 from pathlib import Path
-from colorama import Fore
+from colorama import Fore, init
+
+init(autoreset=True)
 
 def visualize_structure(path: Path, level: int = 0):
     """
@@ -12,7 +14,7 @@ def visualize_structure(path: Path, level: int = 0):
     for item in path.iterdir():
         indent = '    ' * level
         if item.is_dir():
-            print(f"{indent}{Fore.BLUE + item.name}/")
+            print(f"{indent}{Fore.BLUE + item.name}")
             visualize_structure(item, level + 1)
         elif item.is_file():
             print(f"{indent}{Fore.GREEN + item.name}")
